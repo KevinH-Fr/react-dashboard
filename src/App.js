@@ -12,7 +12,7 @@ const App = () => {
       <nav>
         <Navbar /> {/* Use Navbar component here */}
       </nav>
-      <main class="p-4">
+      <main className="p-4">
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/" element={<Home />} />

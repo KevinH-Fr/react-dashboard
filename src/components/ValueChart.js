@@ -30,7 +30,7 @@ const ValueChart = ({ value }) => {
   };
 
   return (
-    <div style={{ height: '300px' }}>
+    <div>
       <Doughnut data={data} />
     </div>
   );
