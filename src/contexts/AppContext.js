@@ -6,6 +6,7 @@ export const AppContext = createContext();
 const AppProvider = ({ children }) => {
   const [value, setValue] = useState(0);
   const [randomNumbers, setRandomNumbers] = useState([0, 0, 0, 0]);
+  const [theme, setTheme] = useState('light');
 
   const incrementValue = () => {
     setValue(prevValue => prevValue + 1);
@@ -21,8 +22,12 @@ const AppProvider = ({ children }) => {
     setRandomNumbers(newRandomNumbers);
   };
 
+  const toggleTheme = () => {
+    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
   return (
-    <AppContext.Provider value={{ value, incrementValue, randomNumbers, generateRandomNumbers }}>
+    <AppContext.Provider value={{ value, incrementValue, randomNumbers, generateRandomNumbers, theme, toggleTheme }}>
       {children}
     </AppContext.Provider>
   );

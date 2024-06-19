@@ -3,13 +3,13 @@ import React, { useContext } from 'react';
 import { AppContext } from '../contexts/AppContext';
 
 const ValueTable = () => {
-  const { value, randomNumbers } = useContext(AppContext);
+  const { value, randomNumbers, theme } = useContext(AppContext);
 
   return (
     <div>
 
-      <table className="table table-bordered my-4">
-        <thead className="thead-dark">
+      <table className={`table table-bordered my-4 ${theme === 'dark' ? 'table-dark' : ''}`}>
+        <thead className={`thead-dark ${theme === 'dark' ? 'bg-dark' : ''}`}>
           <tr>
             <th scope="col">Random Number 1</th>
             <th scope="col">Random Number 2</th>

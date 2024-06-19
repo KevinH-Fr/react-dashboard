@@ -7,7 +7,7 @@ import ValueBarChart from './ValueBarChart';
 import ValueRadarChart from './ValueRadarChart';
 
 const Dashboard = () => {
-    const { value, incrementValue, generateRandomNumbers } = useContext(AppContext);
+    const { value, incrementValue, generateRandomNumbers, theme, toggleTheme  } = useContext(AppContext);
 
   return (
     <div className="jumbotron">
@@ -16,8 +16,12 @@ const Dashboard = () => {
         Increment Value
       </button> */}
 
-      <button className="btn btn-secondary mb-2" onClick={generateRandomNumbers}>
+      <button className="btn btn-primary mb-2" onClick={generateRandomNumbers}>
         Generate Random Numbers
+      </button>
+        <br />
+      <button className="btn btn-secondary m-1" onClick={toggleTheme}>
+        Toggle Theme
       </button>
 
       {/* <p className="lead">Current: {value}</p> */}
