@@ -1,16 +1,20 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client'; // Import createRoot from react-dom/client
 import { BrowserRouter } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AppProvider from './contexts/AppContext';
 
 const root = createRoot(document.getElementById('root')); // Use createRoot from react-dom/client
 
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <AppProvider>
+        <App />
+      </AppProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
